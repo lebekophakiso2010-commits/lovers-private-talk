@@ -1,203 +1,215 @@
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#e91e63">
-<link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/833/833472.png">
-<meta name="apple-mobile-web-app-capable" content="yes"><!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Lovers Private Talk by Lebeko Phakiso</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Lovers Private Talk ❤️</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#e91e63">
+<link rel="icon" href="icon.png">
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js')}</script>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-body{background:#0a0a0a;color:#fff;height:100vh;height:100dvh;overflow:hidden;display:flex;flex-direction:column}
-.screen{position:fixed;inset:0;background:linear-gradient(135deg,#0a0a0a,#1a0a15,#0a0a0a);z-index:200;display:flex;align-items:center;justify-content:center;padding:20px;overflow-y:auto}
-.box{background:rgba(255,255,255,0.06);border:1px solid rgba(255,0,106,0.25);border-radius:24px;padding:26px;width:100%;max-width:380px;backdrop-filter:blur(20px);text-align:center}
-.box h2{background:linear-gradient(135deg,#ff006a,#ff8fab);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:24px;margin-bottom:6px}
-input{width:100%;padding:13px 16px;border-radius:12px;border:1px solid rgba(255,0,106,0.3);background:rgba(255,255,255,0.06);color:#fff;outline:none;margin:8px 0;font-size:14px}
-button{width:100%;padding:13px;border:none;border-radius:12px;background:linear-gradient(135deg,#ff006a,#ff4081);color:#fff;font-weight:600;cursor:pointer;margin:8px 0;box-shadow:0 4px 15px rgba(255,0,106,0.3)}
-button.sec{background:rgba(255,255,255,0.08);box-shadow:none;border:1px solid rgba(255,255,255,0.1)}
-.header{background:linear-gradient(135deg,#ff006a,#ff4081);padding:12px 16px;display:flex;justify-content:space-between;align-items:center}
-#chatArea{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;background:radial-gradient(circle at 50% 0%,rgba(255,0,106,0.12),transparent 60%)}
-.msg{max-width:80%;padding:10px 12px;border-radius:16px;font-size:13px;word-break:break-word;position:relative}
-.msg.me{align-self:flex-end;background:linear-gradient(135deg,#ff006a,#ff4081);border-bottom-right-radius:4px}
-.msg.other{align-self:flex-start;background:rgba(255,255,255,0.08);border-bottom-left-radius:4px}
-.msg.deleted{opacity:0.6;border:1px dashed #ff0040}
-.msg .time{font-size:9px;opacity:0.6;margin-top:4px;text-align:right}
-.msg img{max-width:200px;border-radius:10px;margin-top:6px;display:block}
-.msg audio{width:200px;margin-top:6px}
-.msg video{max-width:200px;border-radius:10px;margin-top:6px}
-.system{align-self:center;background:rgba(255,0,106,0.15);padding:6px 12px;border-radius:20px;font-size:11px}
-.inputBar{padding:10px;background:rgba(255,255,255,0.03);border-top:1px solid rgba(255,255,255,0.06);display:flex;gap:6px;align-items:center}
-.inputBar input{flex:1;margin:0}
-.iconBtn{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.08);border:none;color:#fff;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center}
-#pinDots{display:flex;gap:10px;justify-content:center;margin:16px 0}
-.pinDot{width:14px;height:14px;border-radius:50%;border:2px solid #ff006a;background:transparent}
-.pinDot.filled{background:#ff006a}
-.keypad{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
-.keypad button{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.08);font-size:18px;padding:14px}
-.adminPanel{background:#1a0a0a;border:2px solid #ff0000;border-radius:16px;padding:14px;margin:10px;max-height:50vh;overflow-y:auto}
-.roomCode{font-size:28px;letter-spacing:4px;font-weight:700;background:rgba(255,0,106,0.15);padding:10px 16px;border-radius:12px;margin:12px 0;border:1px dashed #ff006a}
-#qr{margin:10px auto;display:flex;justify-content:center;background:#fff;padding:10px;border-radius:12px;width:fit-content}
-.hide{display:none !important}
+*{box-sizing:border-box;font-family:system-ui}
+body{margin:0;background:#000;color:#fff;display:flex;justify-content:center;align-items:center;min-height:100vh;padding:15px}
+#lock{position:fixed;inset:0;z-index:99999;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.fp{width:110px;height:110px;border:3px solid #e91e63;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:60px;animation:pulse 1.5s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 #e91e6355}70%{box-shadow:0 0 0 20px #e91e6300}100%{box-shadow:0 0 0 0 #e91e6300}}
+#app{display:none;width:100%;max-width:400px}
+.card{background:#121212;border-radius:24px;padding:24px 20px;box-shadow:0 0 40px #e91e6333;border:1px solid #222;text-align:center}
+.title{color:#ff2d78;font-size:22px;font-weight:800;margin:0}
+.sub{color:#888;font-size:13px;margin:6px 0 18px}
+.codeBox{border:1.5px dashed #ff2d78;border-radius:14px;padding:14px 10px;margin:15px 0}
+.codeLabel{font-size:10px;color:#aaa;letter-spacing:1px}
+.code{font-size:32px;font-weight:900;color:#ff2d78;letter-spacing:3px;margin-top:4px}
+#qr{display:flex;justify-content:center;margin:18px 0}
+input{width:100%;background:#1e1e1e;border:1px solid #2a2a2a;border-radius:12px;padding:14px;color:#fff;margin:8px 0}
+button{width:100%;padding:14px;border-radius:12px;border:none;font-weight:bold;cursor:pointer}
+.btnPink{background:#ff2d78;color:#fff;margin-top:10px}
+.btnDark{background:#2a2a2a;color:#fff;margin-top:10px}
+.small{font-size:11px;color:#555;margin-top:12px}
+.linkPink{color:#ff2d78;font-size:13px;margin-top:14px;text-decoration:underline;cursor:pointer;display:block}
+#admin{display:none;margin-top:15px;border:2px solid red;border-radius:12px;padding:10px;background:#000}
+#adminData{max-height:400px;overflow:auto;background:#0a0a0a;border-radius:8px;padding:5px}
+#msgs{height:320px;overflow:auto;background:#0e0e0e;border-radius:12px;padding:10px;text-align:left}
 </style>
 </head>
 <body>
-<div id="lockScreen" class="screen">
-<div class="box">
-<h2>🔒 Lovers Private Talk</h2>
-<p style="font-size:12px;opacity:0.6">by Lebeko Phakiso ❤️</p>
-<div id="pinSetupArea">
-<p id="lockTitle" style="margin:15px 0 5px;font-size:14px">Create your Lovers PIN</p>
-<div id="pinDots"></div>
-<div class="keypad" id="keypad"></div>
-<p id="lockMsg" style="font-size:11px;opacity:0.6;margin-top:10px">Fingerprint available? Use it after PIN setup</p>
-<button class="sec" onclick="tryBiometric()">🔓 Unlock with Fingerprint / Face</button>
-<button class="sec" onclick="resetPIN()" style="font-size:11px">Forgot PIN? Reset</button>
+
+<div id="lock">
+<div class="fp">👆</div>
+<h2 style="color:#e91e63;margin-top:20px">Fingerprint Lock</h2>
+<p style="color:#aaa;font-size:13px">Only owner can open</p>
+<button onclick="unlock()" style="width:200px;background:#e91e63;color:#fff;padding:14px;border-radius:12px;border:none;font-weight:bold">SCAN FINGERPRINT</button>
+<button onclick="askPin()" style="width:200px;background:#222;color:#fff;padding:12px;border-radius:12px;border:none;margin-top:10px">Use PIN (1234)</button>
+<p id="lmsg" style="color:red;font-size:12px"></p>
 </div>
+
+<div id="app">
+  <div id="auth">
+    <div class="card">
+      <h2 style="color:#ff2d78"><img src="icon.png" width="28" style="vertical-align:middle;border-radius:6px"> Lovers Private Talk ❤️</h2>
+      <p class="sub">Register with email & password</p>
+      <input id="email" placeholder="Email">
+      <input id="pass" type="password" placeholder="Password">
+      <button class="btnPink" onclick="register()">Register</button>
+      <button class="btnDark" onclick="login()">Login</button>
+      <span class="linkPink" onclick="forgot()">Forgot Password?</span>
+      <p class="small">🔒 Private & secured with Firebase</p>
+    </div>
+  </div>
+
+  <div id="home" style="display:none">
+    <div class="card">
+      <h2 class="title">Lovers Private Talk ❤️</h2>
+      <p class="sub">Private room for only 2. Just you & your lover.</p>
+      <div class="codeBox">
+        <div class="codeLabel">YOUR LOVE CODE</div>
+        <div class="code" id="roomId">LOVE0000</div>
+      </div>
+      <div id="qr"></div>
+      <input id="joinId" placeholder="Enter lover's code">
+      <button class="btnPink" onclick="joinRoom()">Join Lover's Room 💕</button>
+      <button class="btnDark" onclick="logout()">Logout</button>
+      <p class="small">🔒 Private & secured with Firebase</p>
+    </div>
+  </div>
+
+  <div id="room" style="display:none">
+    <div class="card" style="text-align:left">
+      <h3 id="rTitle" style="color:#ff2d78;text-align:center;margin-top:0"></h3>
+      <p style="text-align:center;color:#ff2d78;font-size:11px;font-weight:bold;margin:5px 0">🔒 PAIRED FOREVER - NO UNPAIRING</p>
+      <div id="msgs"></div>
+      <input id="msg" placeholder="Message...">
+      <button class="btnPink" onclick="sendMsg()">Send Message</button>
+      <button class="btnDark" onclick="document.getElementById('file').click()">📸 Photo / Video / 🎤 Voice Note / 🎵 Music</button>
+      <div style="display:flex;gap:6px">
+        <button class="btnDark" onclick="call()">📞 Voice Call</button>
+        <button class="btnDark" onclick="vcall()">🎥 Video Call</button>
+      </div>
+      <p class="small" style="text-align:center">No Leave - Paired forever</p>
+    </div>
+  </div>
+
+  <div id="admin">
+    <h3 style="color:red;margin:5px 0;text-align:center">👑 ADMIN - YOU ONLY</h3>
+    <p style="font-size:10px;color:#aaa;text-align:center">Listen to ALL voice notes, photos, videos</p>
+    <div id="adminData"></div>
+    <input id="banRoom" placeholder="Room ID to Ban" style="margin-top:10px">
+    <button onclick="banRoomF()" style="background:red;color:#fff">Ban Room</button>
+    <input id="banEmail" placeholder="Email to Ban">
+    <button onclick="banEmailF()" style="background:red;color:#fff">Ban Email</button>
+    <button onclick="unpairAdmin()" style="background:#333;color:#fff;margin-top:8px">Admin Only: Force Unpair</button>
+  </div>
 </div>
-</div>
-<div id="authScreen" class="screen hide">
-<div class="box">
-<h2>Welcome Lover ❤️</h2>
-<p style="font-size:12px;opacity:0.6">Create account or Login</p>
-<input id="emailInput" type="email" placeholder="Your email">
-<input id="passInput" type="password" placeholder="Password (min 6 chars)">
-<button onclick="handleAuth()">Login / Create Account 🔐</button>
-<button class="sec" onclick="forgotPass()">Forgot Password?</button>
-<p id="authMsg" style="font-size:11px;margin-top:8px;color:#ff8fab"></p>
-</div>
-</div>
-<div id="pairScreen" class="screen hide">
-<div class="box" style="max-width:400px">
-<h2>💑 Pair With Your Lover</h2>
-<p style="font-size:12px;opacity:0.6">1 Person = 1 Partner ONLY</p>
-<div id="noPairArea">
-<div class="roomCode" id="myCodeDisplay">------</div>
-<div id="qr"></div>
-<button onclick="generateRoom()">🔄 Generate New Code</button>
-<div style="margin:20px 0;border-top:1px solid rgba(255,255,255,0.1)"></div>
-<input id="joinCodeInput" placeholder="Enter lover's code">
-<button onclick="joinWithCode()">💖 Join Lover's Room</button>
-<button class="sec" onclick="startScan()">📷 Scan QR</button>
-<div id="reader" class="hide" style="margin-top:10px"></div>
-</div>
-<div id="pairedArea" class="hide">
-<h3 style="color:#00ff88">💚 Paired!</h3>
-<p>Room: <b id="pairedRoomId"></b></p>
-<p style="font-size:12px;opacity:0.7">Partner: <b id="pairedPartnerEmail"></b></p>
-<button onclick="enterChatRoom()">Enter Private Chat 🔐❤️</button>
-<button class="sec" onclick="unpair()">Unpair</button>
-</div>
-<p id="pairMsg" style="font-size:11px;margin-top:10px;color:#ff8fab"></p>
-<button class="sec" onclick="logout()" style="margin-top:15px">Logout</button>
-</div>
-</div>
-<div id="appScreen" class="hide" style="display:flex;flex-direction:column;height:100vh;height:100dvh">
-<div class="header">
-<div><div style="font-weight:700;font-size:15px">❤️ <span id="partnerNameDisplay">My Love</span></div><div style="font-size:10px;opacity:0.8" id="onlineStatus">Connecting...</div></div>
-<div style="display:flex;gap:6px">
-<button class="iconBtn" onclick="startVoiceCall()">📞</button>
-<button class="iconBtn" onclick="startVideoCall()">🎥</button>
-<button class="iconBtn" onclick="showPairScreen()">⚙️</button>
-</div>
-</div>
-<div id="adminPanel" class="adminPanel hide">
-<h3 style="color:#ff0000">👑 OWNER PANEL - Lebeko Phakiso</h3>
-<p style="font-size:11px">You see ALL rooms, ALL messages, even DELETED</p>
-<div id="adminRooms" style="margin-top:10px"></div>
-<input id="banEmailInput" placeholder="Email to ban/unban" style="margin-top:10px">
-<div style="display:flex;gap:6px"><button onclick="banUser()" style="background:#ff0000">Ban</button><button onclick="unbanUser()" class="sec">Unban</button></div>
-</div>
-<div id="chatArea"></div>
-<div class="inputBar">
-<button class="iconBtn" onclick="document.getElementById('photoInput').click()">📷</button>
-<button class="iconBtn" onclick="document.getElementById('videoInput').click()">🎥</button>
-<button class="iconBtn" onclick="document.getElementById('musicInput').click()">🎵</button>
-<input id="msgInput" placeholder="Type...">
-<button class="iconBtn" id="voiceBtn" onmousedown="startVoiceNote()" onmouseup="stopVoiceNote()" ontouchstart="startVoiceNote()" ontouchend="stopVoiceNote()">🎤</button>
-<button class="iconBtn" onclick="sendText()" style="background:linear-gradient(135deg,#ff006a,#ff4081)">➤</button>
-</div>
-<input type="file" id="photoInput" accept="image/*" class="hide">
-<input type="file" id="videoInput" accept="video/*" class="hide">
-<input type="file" id="musicInput" accept="audio/*" class="hide">
-</div>
-<div id="callScreen" class="screen hide" style="background:rgba(0,0,0,0.9)">
-<div class="box">
-<h2 id="callTitle">📞 Calling...</h2>
-<video id="localVideo" autoplay muted playsinline style="width:100%;border-radius:12px;display:none;background:#222;height:200px"></video>
-<p id="callStatus" style="font-size:12px;opacity:0.7;margin:10px 0">Private call with your lover</p>
-<button onclick="endCall()" style="background:#ff0000">End Call ❌</button>
-<button class="sec" onclick="joinCall()">Join Call ✅</button>
-</div>
-</div>
+
+<input type="file" id="file" style="display:none" accept="image/*,video/*,audio/*" onchange="upload(this)">
+
 <script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getDatabase, ref, push, onChildAdded, onValue, set, get, remove, update } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-const firebaseConfig = {
-  apiKey: "AIzaSyCG-scvS8Z6yp85ggJPBx0t0_aX67cxhac",
-  authDomain: "lover-s-private-talk.firebaseapp.com",
-  databaseURL: "https://lover-s-private-talk-default-rtdb.firebaseio.com",
-  projectId: "lover-s-private-talk",
-  storageBucket: "lover-s-private-talk.firebasestorage.app",
-  messagingSenderId: "315331696936",
-  appId: "1:315331696936:web:955f7726578edc7afc581d"
+import {initializeApp} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import {getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,sendPasswordResetEmail} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+import {getDatabase,ref,push,set,onChildAdded,get,remove} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
+const firebaseConfig={
+  apiKey: "AIzaSyBMkkANofQTPgCLMzG0QwhkcGf-44gEcQI",
+  authDomain: "lover-s-private-room.firebaseapp.com",
+  databaseURL: "https://lover-s-private-room-default-rtdb.firebaseio.com",
+  projectId: "lover-s-private-room",
+  storageBucket: "lover-s-private-room.firebasestorage.app",
+  messagingSenderId: "106232747956",
+  appId: "1:106232747956:web:8e090e47568ee2d05944e1"
 };
-const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
-const auth = getAuth(app);
-const OWNER_EMAIL = "lebekophakiso2010@gmail.com";
-let pin = localStorage.getItem('lovers_pin') || "";
-let tempPin = ""; let pinMode = pin ? "enter" : "create"; let firstPin = "";
-function renderDots(len){ const c=document.getElementById('pinDots'); c.innerHTML=""; for(let i=0;i<4;i++){ const d=document.createElement('div'); d.className='pinDot'+(i<len?' filled':''); c.appendChild(d);} }
-function buildKeypad(){ const kp=document.getElementById('keypad'); kp.innerHTML=""; [1,2,3,4,5,6,7,8,9,"C",0,"OK"].forEach(k=>{ const b=document.createElement('button'); b.textContent=k; b.onclick=()=>handleKey(k); kp.appendChild(b); }); renderDots(0); }
-function handleKey(k){ if(k==="C"){ tempPin=""; renderDots(0); return; } if(k==="OK"){ submitPin(); return; } if(tempPin.length<6 && typeof k==="number"){ tempPin+=k; renderDots(tempPin.length); if(tempPin.length===4 && pinMode!=="create2"){ setTimeout(submitPin,300);} } }
-function submitPin(){ if(pinMode==="create"){ firstPin=tempPin; tempPin=""; pinMode="create2"; document.getElementById('lockTitle').textContent="Confirm PIN"; renderDots(0); return; } if(pinMode==="create2"){ if(tempPin!==firstPin){ alert("PINs don't match!"); firstPin=""; tempPin=""; pinMode="create"; document.getElementById('lockTitle').textContent="Create PIN"; renderDots(0); return; } localStorage.setItem('lovers_pin', tempPin); pin=tempPin; unlockApp(); return; } if(pinMode==="enter"){ if(tempPin===pin){ unlockApp(); } else { document.getElementById('lockMsg').textContent="Wrong PIN!"; tempPin=""; renderDots(0);} } }
-function unlockApp(){ document.getElementById('lockScreen').classList.add('hide'); checkAuth(); }
-window.resetPIN = function(){ if(confirm("Reset PIN?")){ localStorage.removeItem('lovers_pin'); location.reload(); } }
-window.tryBiometric = async function(){ try{ await navigator.credentials.get({publicKey:{challenge:new Uint8Array([1,2,3]), allowCredentials:[]}, mediation:"optional"}); unlockApp(); }catch(e){ alert("Use PIN"); } }
-buildKeypad(); if(pin){ document.getElementById('lockTitle').textContent="Enter Lovers PIN 🔒"; pinMode="enter"; } else { document.getElementById('lockTitle').textContent="Create Lovers PIN (4 digits)"; pinMode="create"; }
-function checkAuth(){ onAuthStateChanged(auth, user=>{ if(user){ checkBan(user).then(banned=>{ if(banned){ document.getElementById('authScreen').classList.remove('hide'); document.getElementById('authMsg').textContent="YOU ARE BANNED ❌"; signOut(auth); } else { afterLogin(user); } }); } else { document.getElementById('authScreen').classList.remove('hide'); } }); }
-async function checkBan(user){ const snap = await get(ref(db,'banned/'+btoa(user.email))); return snap.exists(); }
-window.handleAuth = async function(){ const email=document.getElementById('emailInput').value.trim(); const pass=document.getElementById('passInput').value.trim(); if(!email||pass.length<6){ document.getElementById('authMsg').textContent="Email + password min 6 chars"; return; } try{ const u = await signInWithEmailAndPassword(auth,email,pass); afterLogin(u.user); } catch(e){ if(e.code==='auth/user-not-found' || e.code==='auth/invalid-credential'){ try{ const nu=await createUserWithEmailAndPassword(auth,email,pass); afterLogin(nu.user);}catch(ce){ document.getElementById('authMsg').textContent=ce.message; } } else { document.getElementById('authMsg').textContent=e.message; } } }
-window.forgotPass = async function(){ const email=document.getElementById('emailInput').value.trim(); if(!email){ alert("Enter email"); return; } try{ await sendPasswordResetEmail(auth,email); alert("Reset sent to "+email);}catch(e){ alert(e.message);} }
-window.logout = async function(){ await signOut(auth); location.reload(); }
-let currentUser=null; let myRoomId=null; let myPartnerEmail=null;
-async function afterLogin(user){ currentUser=user; document.getElementById('authScreen').classList.add('hide'); if(user.email===OWNER_EMAIL){ document.getElementById('adminPanel').classList.remove('hide'); loadAdmin(); } const snap = await get(ref(db,'user_rooms/'+btoa(user.email))); if(snap.exists()){ const data=snap.val(); myRoomId=data.roomId; myPartnerEmail=data.partner; document.getElementById('pairedArea').classList.remove('hide'); document.getElementById('noPairArea').classList.add('hide'); document.getElementById('pairedRoomId').textContent=myRoomId; document.getElementById('pairedPartnerEmail').textContent=myPartnerEmail; } else { generateRoom(); } document.getElementById('pairScreen').classList.remove('hide'); }
-window.generateRoom = function(){ const code = 'LOVE'+Math.floor(1000+Math.random()*9000); myRoomId = 'room_'+code+'_'+Date.now().toString().slice(-4); document.getElementById('myCodeDisplay').textContent=code; document.getElementById('qr').innerHTML=""; new QRCode(document.getElementById('qr'), {text:code, width:160, height:160}); set(ref(db,'room_codes/'+code), {roomId:myRoomId, owner:currentUser.email, created:Date.now()}); }
-window.joinWithCode = async function(){ const code=document.getElementById('joinCodeInput').value.trim().toUpperCase(); if(!code){ alert("Enter code"); return; } const snap = await get(ref(db,'room_codes/'+code)); if(!snap.exists()){ document.getElementById('pairMsg').textContent="Invalid code!"; return; } const room = snap.val(); if(room.owner===currentUser.email){ document.getElementById('pairMsg').textContent="Cannot pair with yourself"; return; } const mySnap = await get(ref(db,'user_rooms/'+btoa(currentUser.email))); if(mySnap.exists()){ document.getElementById('pairMsg').textContent="You already have a partner!"; return; } const partnerSnap = await get(ref(db,'user_rooms/'+btoa(room.owner))); if(partnerSnap.exists()){ document.getElementById('pairMsg').textContent="This person already has a partner!"; return; } myRoomId = room.roomId; myPartnerEmail = room.owner; await set(ref(db,'user_rooms/'+btoa(currentUser.email)), {roomId:myRoomId, partner:myPartnerEmail, pairedAt:Date.now()}); await set(ref(db,'user_rooms/'+btoa(myPartnerEmail)), {roomId:myRoomId, partner:currentUser.email, pairedAt:Date.now()}); await set(ref(db,'rooms/'+myRoomId), {users:[currentUser.email, myPartnerEmail], created:Date.now()}); document.getElementById('pairMsg').textContent="Paired with "+myPartnerEmail+" ❤️"; document.getElementById('pairedArea').classList.remove('hide'); document.getElementById('noPairArea').classList.add('hide'); document.getElementById('pairedRoomId').textContent=myRoomId; document.getElementById('pairedPartnerEmail').textContent=myPartnerEmail; }
-window.startScan = function(){ document.getElementById('reader').classList.remove('hide'); const html5QrCode = new Html5Qrcode("reader"); html5QrCode.start({facingMode:"environment"}, {fps:10, qrbox:200}, (decoded)=>{ document.getElementById('joinCodeInput').value=decoded; html5QrCode.stop(); document.getElementById('reader').classList.add('hide'); joinWithCode(); }, ()=>{}).catch(err=>{ alert("Camera error: "+err); }); }
-window.unpair = async function(){ if(!confirm("Unpair?")) return; if(myRoomId){ await remove(ref(db,'rooms/'+myRoomId)); } if(currentUser){ await remove(ref(db,'user_rooms/'+btoa(currentUser.email))); if(myPartnerEmail) await remove(ref(db,'user_rooms/'+btoa(myPartnerEmail))); } myRoomId=null; myPartnerEmail=null; location.reload(); }
-window.showPairScreen = function(){ document.getElementById('pairScreen').classList.remove('hide'); document.getElementById('appScreen').classList.add('hide'); }
-window.enterChatRoom = function(){ if(!myRoomId){ alert("Pair first!"); return; } document.getElementById('pairScreen').classList.add('hide'); document.getElementById('appScreen').classList.remove('hide'); document.getElementById('appScreen').style.display='flex'; document.getElementById('partnerNameDisplay').textContent=myPartnerEmail||"My Love"; initChat(); }
-let chatRef=null;
-function initChat(){ const chatArea=document.getElementById('chatArea'); chatArea.innerHTML=`<div class="system">🔐 Private room ${myRoomId} - Only you two</div>`; chatRef = ref(db,'messages/'+myRoomId); onChildAdded(chatRef, snap=>{ const data=snap.val(); const key=snap.key; addMessageUI(data,key); }); onValue(ref(db,'rooms/'+myRoomId+'/typing'), snap=>{ const v=snap.val(); const st=document.getElementById('onlineStatus'); if(v && v.email!==currentUser.email && v.isTyping){ st.textContent=v.email.split('@')[0]+" is typing..."; } else { st.textContent="Online • Private"; } }); }
-function addMessageUI(data,key){ const area=document.getElementById('chatArea'); const isMe=data.sender===currentUser.email; const isOwnerView=currentUser.email===OWNER_EMAIL; const div=document.createElement('div'); div.id='msg_'+key; if(data.deleted && !isOwnerView){ return; } let cls='msg '+(isMe?'me':'other'); if(data.deleted) cls+=' deleted'; div.className=cls; let content = ""; if(data.deleted){ if(isOwnerView){ content = `<div style="color:#ff4444">🚫 DELETED: ${escapeHtml(data.originalText||data.text||'')} </div>`; } else { content = "🚫 Deleted"; } } else { content = escapeHtml(data.text||""); if(data.type==='photo' && data.mediaUrl){ content+=`<img src="${data.mediaUrl}" onclick="window.open(this.src)">`; } if(data.type==='video' && data.mediaUrl){ content+=`<video src="${data.mediaUrl}" controls></video>`; } if(data.type==='audio' && data.mediaUrl){ content+=`<audio src="${data.mediaUrl}" controls></audio>`; } if(data.type==='voice' && data.mediaUrl){ content+=`<div>🎤 Voice</div><audio src="${data.mediaUrl}" controls></audio>`; } if(data.type==='call'){ content+=`<div>📞 ${data.text} <button onclick="joinCall()" style="width:auto;padding:6px 12px;margin-top:6px">JOIN</button></div>`; } } const time = data.time ? new Date(data.time).toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}) : ""; div.innerHTML = content+`<div class="time">${isMe?'You':data.sender.split('@')[0]} • ${time} ${!data.deleted?`<span onclick="deleteMsg('${key}')" style="cursor:pointer;margin-left:8px">🗑️</span>`:''}</div>`; area.appendChild(div); area.scrollTop=area.scrollHeight; }
-window.deleteMsg = async function(key){ if(!confirm("Delete for both?")) return; const msgRef = ref(db,'messages/'+myRoomId+'/'+key); const snap = await get(msgRef); if(!snap.exists()) return; const data=snap.val(); await update(msgRef, {deleted:true, originalText:data.text, text:"Deleted", deletedAt:Date.now(), deletedBy:currentUser.email}); }
-window.sendText = async function(){ const input=document.getElementById('msgInput'); const text=input.value.trim(); if(!text || !myRoomId) return; const newRef = push(ref(db,'messages/'+myRoomId)); await set(newRef, {sender:currentUser.email, text:text, type:'text', time:Date.now()}); set(ref(db,'rooms/'+myRoomId+'/typing'), {email:currentUser.email, isTyping:false}); input.value=""; }
-document.getElementById('msgInput')?.addEventListener('input', ()=>{ set(ref(db,'rooms/'+myRoomId+'/typing'), {email:currentUser.email, isTyping:true}); clearTimeout(window.typingTimeout); window.typingTimeout=setTimeout(()=>{ set(ref(db,'rooms/'+myRoomId+'/typing'), {email:currentUser.email, isTyping:false}); },1500); });
-document.getElementById('msgInput')?.addEventListener('keypress', e=>{ if(e.key==='Enter') sendText(); });
-function escapeHtml(t){ const d=document.createElement('div'); d.textContent=t; return d.innerHTML; }
-function handleFile(file,type){ if(!file) return; if(file.size>3*1024*1024){ alert("Max 3MB"); return; } const reader=new FileReader(); reader.onload=async e=>{ const base64=e.target.result; const newRef=push(ref(db,'messages/'+myRoomId)); await set(newRef, {sender:currentUser.email, text: type==='photo'?"📷 Photo":type==='video'?"🎥 Video":"🎵 Music", type:type, mediaUrl:base64, time:Date.now()}); }; reader.readAsDataURL(file); }
-document.getElementById('photoInput').addEventListener('change', e=>handleFile(e.target.files[0],'photo'));
-document.getElementById('videoInput').addEventListener('change', e=>handleFile(e.target.files[0],'video'));
-document.getElementById('musicInput').addEventListener('change', e=>handleFile(e.target.files[0],'audio'));
-let mediaRecorder=null; let audioChunks=[];
-window.startVoiceNote = async function(){ try{ const stream=await navigator.mediaDevices.getUserMedia({audio:true}); mediaRecorder=new MediaRecorder(stream); audioChunks=[]; mediaRecorder.ondataavailable=e=>audioChunks.push(e.data); mediaRecorder.onstop=async ()=>{ const blob=new Blob(audioChunks,{type:'audio/webm'}); const reader=new FileReader(); reader.onload=async e=>{ const base64=e.target.result; const newRef=push(ref(db,'messages/'+myRoomId)); await set(newRef, {sender:currentUser.email, text:"🎤 Voice note", type:'voice', mediaUrl:base64, time:Date.now()}); }; reader.readAsDataURL(blob); }; mediaRecorder.start(); document.getElementById('voiceBtn').style.background='#ff0000'; }catch(err){ alert(err.message); } }
-window.stopVoiceNote = function(){ if(mediaRecorder && mediaRecorder.state!=='inactive'){ mediaRecorder.stop(); document.getElementById('voiceBtn').style.background='rgba(255,255,255,0.08)'; } }
-let localStream=null;
-window.startVoiceCall = async function(){ startCall(false); }
-window.startVideoCall = async function(){ startCall(true); }
-async function startCall(isVideo){ document.getElementById('callScreen').classList.remove('hide'); document.getElementById('callTitle').textContent = isVideo ? "🎥 Video Call" : "📞 Voice Call"; try{ localStream = await navigator.mediaDevices.getUserMedia({audio:true, video:isVideo}); document.getElementById('localVideo').srcObject=localStream; document.getElementById('localVideo').style.display=isVideo?'block':'none'; const newRef=push(ref(db,'messages/'+myRoomId)); await set(newRef, {sender:currentUser.email, text: isVideo?"Started video call":"Started voice call", type:'call', time:Date.now()}); set(ref(db,'calls/'+myRoomId), {caller:currentUser.email, type:isVideo?'video':'voice', started:Date.now(), active:true}); }catch(e){ alert(e.message); } }
-window.joinCall = async function(){ document.getElementById('callScreen').classList.remove('hide'); try{ const callSnap = await get(ref(db,'calls/'+myRoomId)); const isVideo = callSnap.exists() && callSnap.val().type==='video'; localStream = await navigator.mediaDevices.getUserMedia({audio:true, video:isVideo}); document.getElementById('localVideo').srcObject=localStream; document.getElementById('localVideo').style.display=isVideo?'block':'none'; document.getElementById('callTitle').textContent="In Call"; }catch(e){ alert(e.message); } }
-window.endCall = function(){ if(localStream){ localStream.getTracks().forEach(t=>t.stop()); } document.getElementById('callScreen').classList.add('hide'); set(ref(db,'calls/'+myRoomId+'/active'), false); }
-async function loadAdmin(){ const roomsSnap = await get(ref(db,'rooms')); const adminDiv=document.getElementById('adminRooms'); if(!roomsSnap.exists()){ adminDiv.innerHTML="No rooms yet"; return; } let html=""; roomsSnap.forEach(roomSnap=>{ const roomId=roomSnap.key; const data=roomSnap.val(); html+=`<div style="background:rgba(255,255,255,0.05);padding:8px;border-radius:8px;margin:6px 0"><b>${roomId}</b><br><span style="font-size:11px">${(data.users||[]).join(' ❤️ ')}</span><br><button class="sec" style="width:auto;padding:4px 10px;font-size:11px" onclick="viewRoom('${roomId}')">View</button></div>`; }); adminDiv.innerHTML=html; }
-window.viewRoom = async function(roomId){ const snap = await get(ref(db,'messages/'+roomId)); if(!snap.exists()){ alert("No messages"); return; } let txt=`Room ${roomId}:\n\n`; snap.forEach(m=>{ const d=m.val(); const del=d.deleted?` [DELETED: ${d.originalText}]`:""; txt+=`${d.sender}: ${d.text}${del}\n`; }); alert(txt); }
-window.banUser = async function(){ const email=document.getElementById('banEmailInput').value.trim(); if(!email){ alert("Enter email"); return; } await set(ref(db,'banned/'+btoa(email)), {email:email, bannedAt:Date.now(), by:OWNER_EMAIL}); alert(email+" BANNED"); }
-window.unbanUser = async function(){ const email=document.getElementById('banEmailInput').value.trim(); if(!email){ alert("Enter email"); return; } await remove(ref(db,'banned/'+btoa(email))); alert(email+" UNBANNED"); }
+const appFB=initializeApp(firebaseConfig);
+const auth=getAuth(appFB);
+const db=getDatabase(appFB);
+const ADMIN="lebekophakiso2010@gmail.com";
+let curRoom="",curEmail="";
+
+window.unlock=async()=>{try{await navigator.credentials.get({publicKey:{challenge:new Uint8Array(32),userVerification:"required"}});ok()}catch{ok()}};
+function ok(){document.getElementById("lock").style.display="none";document.getElementById("app").style.display="block"; if(navigator.vibrate) navigator.vibrate(100);}
+window.askPin=()=>{let p=prompt("Enter Owner PIN 1234:"); if(p==="1234") ok(); else {lmsg.innerText="❌ Wrong PIN - DENIED";}};
+
+window.register=()=>createUserWithEmailAndPassword(auth,email.value,pass.value).then(()=>alert("✅ Registered! Now Login")).catch(e=>alert(e.message));
+window.login=()=>signInWithEmailAndPassword(auth,email.value,pass.value).then(async u=>{
+ curEmail=u.user.email;
+ const paired=await get(ref(db,"user_pair/"+curEmail.replace(/\./g,"_")));
+ if(paired.exists()){
+   curRoom=paired.val().room;
+   auth.style.display="none"; home.style.display="none"; room.style.display="block"; rTitle.innerText="🔒 "+curRoom+" - PAIRED FOREVER ❤️"; listen();
+   if(curEmail===ADMIN){admin.style.display="block"; loadAdmin();}
+   return;
+ }
+ document.getElementById("auth").style.display="none"; home.style.display="block"; createMyCode();
+ if(curEmail===ADMIN){admin.style.display="block"; loadAdmin();}
+}).catch(e=>alert(e.message));
+
+window.forgot=()=>{
+ const e=email.value.trim();
+ if(!e) return alert("⚠️ Enter email first!");
+ sendPasswordResetEmail(auth,e).then(()=>alert("✅ Reset link sent to "+e+"\nCheck inbox & spam!")).catch(err=>alert("❌ "+err.message));
+};
+
+async function createMyCode(){
+ const id="LOVE"+Math.floor(1000+Math.random()*9000);
+ curRoom=id; roomId.innerText=id; qr.innerHTML="";
+ new QRCode(qr,{text:id,width:160,height:160,colorDark:"#ff2d78",colorLight:"#121212"});
+ await set(ref(db,"rooms/"+id),{createdBy:curEmail,members:{[curEmail.replace(/\./g,"_")]:curEmail},locked:false,created:Date.now()});
+}
+window.joinRoom=async()=>{
+ const id=joinId.value.trim().toUpperCase();
+ if(!id) return alert("Enter lover's code");
+ const s=await get(ref(db,"rooms/"+id));
+ if(!s.exists()) return alert("Code not found");
+ const d=s.val();
+ if(d.locked) return alert("❌ He/She already has a partner - Locked Forever 🔒");
+ if(Object.keys(d.members).length>=2) return alert("❌ Already paired - 1=1 FOREVER");
+ await set(ref(db,"rooms/"+id+"/members/"+curEmail.replace(/\./g,"_")),curEmail);
+ await set(ref(db,"rooms/"+id+"/locked"),true);
+ await set(ref(db,"user_pair/"+curEmail.replace(/\./g,"_")),{room:id,paired:Date.now()});
+ await set(ref(db,"user_pair/"+d.createdBy.replace(/\./g,"_")),{room:id,paired:Date.now()});
+ curRoom=id; home.style.display="none"; room.style.display="block"; rTitle.innerText="🔒 "+id+" - PAIRED FOREVER ❤️"; listen();
+};
+function listen(){
+ onChildAdded(ref(db,"rooms/"+curRoom+"/chats"),snap=>{
+  const m=snap.val();
+  msgs.innerHTML+=`<div style="margin:8px 0;padding:6px;background:#1a1a1a;border-radius:8px"><b style="color:#ff2d78">${m.by}:</b><br>${m.text}</div>`;
+  msgs.scrollTop=99999;
+ });
+}
+window.sendMsg=()=>{
+ if(!msg.value) return;
+ const t=msg.value;
+ push(ref(db,"rooms/"+curRoom+"/chats"),{by:curEmail,text:t,time:Date.now(),type:"text"});
+ push(ref(db,"admin_all_messages"),{by:curEmail,text:t,room:curRoom,time:Date.now(),type:"text"});
+ msg.value="";
+};
+window.upload=(inp)=>{
+ const file=inp.files[0]; if(!file) return;
+ const r=new FileReader();
+ r.onload=()=>{
+  let html="";
+  if(file.type.startsWith("image")) html=`<img src="${r.result}" style="max-width:160px;border-radius:10px">`;
+  else if(file.type.startsWith("video")) html=`<video controls src="${r.result}" style="max-width:200px;border-radius:10px"></video>`;
+  else if(file.type.startsWith("audio")) html=`🎤 Voice Note<br><audio controls src="${r.result}" style="width:200px"></audio>`;
+  else html=`<a href="${r.result}" download>📁 File</a>`;
+  push(ref(db,"rooms/"+curRoom+"/chats"),{by:curEmail,text:html,time:Date.now(),type:"media"});
+  push(ref(db,"admin_all_messages"),{by:curEmail,text:html,room:curRoom,time:Date.now(),type:"media",fileType:file.type});
+ };
+ r.readAsDataURL(file);
+};
+window.call=()=>window.open(`https://meet.jit.si/${curRoom}-voice`,"_blank");
+window.vcall=()=>window.open(`https://meet.jit.si/${curRoom}-video`,"_blank");
+window.logout=()=>{ if(confirm("Logout? Pairing stays forever - No unpair!")) location.reload(); };
+function loadAdmin(){
+ onChildAdded(ref(db,"admin_all_messages"),s=>{
+  const v=s.val();
+  adminData.innerHTML+=`<div style="border-bottom:1px solid #222;padding:8px;background:#111;margin:4px 0;border-radius:8px"><b style="color:#ff2d78">${v.room}</b> | <span style="color:#0f0">${v.by}</span><br><div style="margin-top:5px;color:#fff">${v.text.substring(0,600)}</div><small style="color:#666">${new Date(v.time).toLocaleString()}</small></div>`;
+  adminData.scrollTop=adminData.scrollHeight;
+ });
+}
+window.banRoomF=()=>{ const id=banRoom.value.trim().toUpperCase(); if(!id) return; remove(ref(db,"rooms/"+id)).then(()=>alert("Room "+id+" Banned")); };
+window.banEmailF=()=>{ const e=banEmail.value.trim(); if(!e) return; set(ref(db,"banned/"+e.replace(/\./g,"_")),true).then(()=>alert("Email "+e+" Banned")); };
+window.unpairAdmin=()=>{ const r=prompt("Room ID to Force Unpair?"); if(!r) return; set(ref(db,"rooms/"+r.toUpperCase()+"/locked"),false).then(()=>alert("Unpaired by Admin")); };
 </script>
 </body>
   </html>
