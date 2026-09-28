@@ -197,4 +197,4 @@ window.banUser = async function(){ const email=document.getElementById('banEmail
 window.unbanUser = async function(){ const email=document.getElementById('banEmailInput').value.trim(); if(!email){ alert("Enter email"); return; } await remove(ref(db,'banned/'+btoa(email))); alert(email+" UNBANNED"); }
 </script>
 </body>
-  </html>
+</html>
