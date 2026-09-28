@@ -1,15 +1,15 @@
 {
-  "name": "Lovers Private Talk",
+  "name": "Lovers Private Talk ❤️",
   "short_name": "LoversTalk",
-  "description": "Private room for only 2. Just you & your lover.",
-  "start_url": "/lovers-private-talk/",
+  "description": "Private room for only 2 - Paired forever",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#e91e63",
   "orientation": "portrait",
   "icons": [
     {
-      "src": "https://cdn-icons-png.flaticon.com/512/833/833472.png",
+      "src": "icon.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
