@@ -1,13 +1,20 @@
 {
   "name": "Lovers Private Talk ❤️",
   "short_name": "LoversTalk",
-  "description": "Private room for only 2 - Paired forever",
-  "start_url": "./index.html",
+  "description": "Private room for only 2 lovers - Paired Forever",
+  "start_url": "/lovers-private-talk/",
+  "scope": "/lovers-private-talk/",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#000000",
   "theme_color": "#e91e63",
-  "orientation": "portrait",
   "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
     {
       "src": "icon.png",
       "sizes": "512x512",
