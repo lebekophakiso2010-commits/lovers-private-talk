@@ -1,0 +1,24 @@
+{
+  "name": "Lovers Private Talk",
+  "short_name": "Lovers",
+  "description": "Private chat for only two lovers. Secret, romantic, just you two.",
+  "start_url": "/lovers-private-talk/",
+  "display": "standalone",
+  "background_color": "#0f0f0f",
+  "theme_color": "#e91e63",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
