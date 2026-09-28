@@ -20,5 +20,35 @@
       "type": "image/png",
       "purpose": "any maskable"
     }
-  ]
+  ],
+  "id": "com.lovers.privatetalk",
+  "dir": "ltr",
+  "lang": "en",
+  "scope": "/lovers-private-talk/",
+  "display_override": [
+    "standalone",
+    "minimal-ui",
+    "window-controls-overlay"
+  ],
+  "categories": [
+    "entertainment",
+    "lifestyle",
+    "social"
+  ],
+  "share_target": {
+    "action": "/lovers-private-talk/?share=true",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    },
+    "files": [
+      {
+        "name": "media",
+        "accept": ["image/*", "audio/*", "video/*"]
+      }
+    ]
+  }
 }
